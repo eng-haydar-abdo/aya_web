@@ -1,0 +1,100 @@
+<!doctype html>
+<html lang="ar" dir="rtl">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#ff668b">
+  <meta name="description" content="جدول أسبوعي لطيف لتنظيم مواعيد العناية والجرعات اليومية.">
+  <title>جدول العناية والصحة الأسبوعي</title>
+  <link rel="stylesheet" href="styles.css">
+  <script src="https://cdn.jsdelivr.net/npm/motion@latest/dist/motion.js" defer></script>
+  <script src="app.js" defer></script>
+  <script src="motion-effects.js" defer></script>
+</head>
+<body>
+  <main class="page">
+    <header class="hero">
+      <div class="hero-decoration" aria-hidden="true">🎀</div>
+      <p class="eyebrow">مساحة صغيرة لعناية كبيرة</p>
+      <h1>جدول العناية والصحة الأسبوعي</h1>
+      <p class="hero-subtitle">كل حبة دواء هي خطوة جميلة نحو صحتك ونشاطك وإشراقتك ✨</p>
+      <span class="hero-sparkle sparkle-one" aria-hidden="true">✦</span>
+      <span class="hero-sparkle sparkle-two" aria-hidden="true">✧</span>
+    </header>
+
+    <section class="profile-bar" aria-label="بيانات الجدول">
+      <div class="profile-field fixed-name">🌸 الاسم: <strong>آيه عصام صافي</strong></div>
+      <label class="profile-field">📅 بداية الأسبوع:
+        <input id="weekInput" type="date" aria-label="تاريخ بداية الأسبوع">
+      </label>
+      <div class="profile-field motto-field fixed-motto">💖 شعاري الأسبوعي: <strong>صحتي وإشراقتي أولا</strong></div>
+    </section>
+
+    <section class="routine panel" aria-labelledby="routineTitle">
+      <div class="section-heading">
+        <div><span class="section-icon">💗</span><h2 id="routineTitle">ترتيب الجرعات والروتين اليومي</h2></div>
+        <span class="heading-line"></span>
+      </div>
+      <div class="routine-grid">
+        <article class="routine-card zinc"><span class="routine-time">🌅 صباحًا (معدة فاضية)</span><p>زنك (Zinc): <b>حبة واحدة</b> قبل الأكل بساعة</p></article>
+        <article class="routine-card morning"><span class="routine-time">🍳 صباحًا (بعد الإفطار)</span><p>حديد: حبة واحدة<br>بيوراجنتين <b>500mg</b>: حبة واحدة<br>مج <b>1000mcg B12</b>: حبة واحدة</p></article>
+        <article class="routine-card noon"><span class="routine-time">☀️ بعد الغداء</span><p>فوليك أسيد <b>5mg</b>: حبة واحدة</p></article>
+        <article class="routine-card evening"><span class="routine-time">🌙 مساءً (بعد العشاء)</span><p>حديد: حبة واحدة<br>بيوراجنتين <b>500mg</b>: حبة واحدة</p></article>
+      </div>
+    </section>
+
+    <section class="tracker panel" aria-label="جدول متابعة الأسبوع">
+      <div class="tracker-topline">
+        <div><span class="section-icon">🗓️</span><h2>متابعة أسبوعك</h2></div>
+        <div class="tracker-actions"><div class="progress-wrap"><span id="progressLabel">إنجاز الأسبوع 0%</span><div class="progress-track"><span id="progressBar"></span></div></div><button class="reset-button" id="resetTable" type="button">↺ إعادة ضبط الجدول</button></div>
+      </div>
+      <div class="table-scroll">
+        <table class="weekly-table">
+          <thead><tr><th class="period-col">الفترة / اليوم</th>
+            <th data-day="6">🌸 السبت</th><th data-day="0">🌷 الأحد</th><th data-day="1">🦄 الاثنين</th><th data-day="2">🌼 الثلاثاء</th><th data-day="3">☀️ الأربعاء</th><th data-day="4">🌿 الخميس</th><th data-day="5">✨ الجمعة</th>
+          </tr></thead>
+          <tbody>
+            <tr><th scope="row"><span class="period-title">🌅 قبل الإفطار</span><small>على معدة فاضية</small></th><td><label class="check-pill"><span>زنك</span><input type="checkbox" data-dose="zinc"><i></i></label></td><td><label class="check-pill"><span>زنك</span><input type="checkbox" data-dose="zinc"><i></i></label></td><td><label class="check-pill"><span>زنك</span><input type="checkbox" data-dose="zinc"><i></i></label></td><td><label class="check-pill"><span>زنك</span><input type="checkbox" data-dose="zinc"><i></i></label></td><td><label class="check-pill"><span>زنك</span><input type="checkbox" data-dose="zinc"><i></i></label></td><td><label class="check-pill"><span>زنك</span><input type="checkbox" data-dose="zinc"><i></i></label></td><td><label class="check-pill"><span>زنك</span><input type="checkbox" data-dose="zinc"><i></i></label></td></tr>
+            <tr><th scope="row"><span class="period-title">🍳 بعد الإفطار</span><small>الصباح</small></th>
+              <td><label class="check-pill"><span>حديد</span><input type="checkbox" data-dose="iron-am"><i></i></label><label class="check-pill"><span>بيوراجنتين</span><input type="checkbox" data-dose="pure-am"><i></i></label><label class="check-pill"><span>B12</span><input type="checkbox" data-dose="b12"><i></i></label></td>
+              <td><label class="check-pill"><span>حديد</span><input type="checkbox" data-dose="iron-am"><i></i></label><label class="check-pill"><span>بيوراجنتين</span><input type="checkbox" data-dose="pure-am"><i></i></label><label class="check-pill"><span>B12</span><input type="checkbox" data-dose="b12"><i></i></label></td>
+              <td><label class="check-pill"><span>حديد</span><input type="checkbox" data-dose="iron-am"><i></i></label><label class="check-pill"><span>بيوراجنتين</span><input type="checkbox" data-dose="pure-am"><i></i></label><label class="check-pill"><span>B12</span><input type="checkbox" data-dose="b12"><i></i></label></td>
+              <td><label class="check-pill"><span>حديد</span><input type="checkbox" data-dose="iron-am"><i></i></label><label class="check-pill"><span>بيوراجنتين</span><input type="checkbox" data-dose="pure-am"><i></i></label><label class="check-pill"><span>B12</span><input type="checkbox" data-dose="b12"><i></i></label></td>
+              <td><label class="check-pill"><span>حديد</span><input type="checkbox" data-dose="iron-am"><i></i></label><label class="check-pill"><span>بيوراجنتين</span><input type="checkbox" data-dose="pure-am"><i></i></label><label class="check-pill"><span>B12</span><input type="checkbox" data-dose="b12"><i></i></label></td>
+              <td><label class="check-pill"><span>حديد</span><input type="checkbox" data-dose="iron-am"><i></i></label><label class="check-pill"><span>بيوراجنتين</span><input type="checkbox" data-dose="pure-am"><i></i></label><label class="check-pill"><span>B12</span><input type="checkbox" data-dose="b12"><i></i></label></td>
+              <td><label class="check-pill"><span>حديد</span><input type="checkbox" data-dose="iron-am"><i></i></label><label class="check-pill"><span>بيوراجنتين</span><input type="checkbox" data-dose="pure-am"><i></i></label><label class="check-pill"><span>B12</span><input type="checkbox" data-dose="b12"><i></i></label></td></tr>
+            <tr><th scope="row"><span class="period-title">☀️ بعد الغداء</span><small>منتصف النهار</small></th>
+              <td><label class="check-pill"><span>فوليك أسيد</span><input type="checkbox" data-dose="folic"><i></i></label></td><td><label class="check-pill"><span>فوليك أسيد</span><input type="checkbox" data-dose="folic"><i></i></label></td><td><label class="check-pill"><span>فوليك أسيد</span><input type="checkbox" data-dose="folic"><i></i></label></td><td><label class="check-pill"><span>فوليك أسيد</span><input type="checkbox" data-dose="folic"><i></i></label></td><td><label class="check-pill"><span>فوليك أسيد</span><input type="checkbox" data-dose="folic"><i></i></label></td><td><label class="check-pill"><span>فوليك أسيد</span><input type="checkbox" data-dose="folic"><i></i></label></td><td><label class="check-pill weekly-dose"><span>فوليك أسيد + D3</span><input type="checkbox" data-dose="d3"><i></i></label></td></tr>
+            <tr><th scope="row"><span class="period-title">🌙 بعد العشاء</span><small>المساء</small></th>
+              <td><label class="check-pill"><span>حديد</span><input type="checkbox" data-dose="iron-pm"><i></i></label><label class="check-pill"><span>بيوراجنتين</span><input type="checkbox" data-dose="pure-pm"><i></i></label></td>
+              <td><label class="check-pill"><span>حديد</span><input type="checkbox" data-dose="iron-pm"><i></i></label><label class="check-pill"><span>بيوراجنتين</span><input type="checkbox" data-dose="pure-pm"><i></i></label></td>
+              <td><label class="check-pill"><span>حديد</span><input type="checkbox" data-dose="iron-pm"><i></i></label><label class="check-pill"><span>بيوراجنتين</span><input type="checkbox" data-dose="pure-pm"><i></i></label></td>
+              <td><label class="check-pill"><span>حديد</span><input type="checkbox" data-dose="iron-pm"><i></i></label><label class="check-pill"><span>بيوراجنتين</span><input type="checkbox" data-dose="pure-pm"><i></i></label></td>
+              <td><label class="check-pill"><span>حديد</span><input type="checkbox" data-dose="iron-pm"><i></i></label><label class="check-pill"><span>بيوراجنتين</span><input type="checkbox" data-dose="pure-pm"><i></i></label></td>
+              <td><label class="check-pill"><span>حديد</span><input type="checkbox" data-dose="iron-pm"><i></i></label><label class="check-pill"><span>بيوراجنتين</span><input type="checkbox" data-dose="pure-pm"><i></i></label></td>
+              <td><label class="check-pill"><span>حديد</span><input type="checkbox" data-dose="iron-pm"><i></i></label><label class="check-pill"><span>بيوراجنتين</span><input type="checkbox" data-dose="pure-pm"><i></i></label></td></tr>
+          </tbody>
+        </table>
+      </div>
+      <div class="table-note"><span>💡</span> اضغطي على المربع لتسجيل الجرعة. يُحفظ تقدمك تلقائيًا على هذا الجهاز.</div>
+    </section>
+
+    <section class="tips panel" aria-labelledby="tipsTitle">
+      <div class="tips-title"><span>💕</span><h2 id="tipsTitle">لمسات تحفيزية وإرشادات لراحتك وصحتك</h2></div>
+      <ul>
+        <li><b>صحتك هي استثمارك الأجمل:</b> كل حبة دواء تأخذينها اليوم هي خطوة نحو طاقة أكبر وحيوية أقوى وإشراقة جميلة غدًا! 🌸</li>
+        <li><b>الزنك والحديد:</b> الزنك قبل الإفطار والحديد بعده، لمنح التداخل بينهما وضمان أفضل امتصاص.</li>
+        <li><b>الشاي والقهوة والمشروبات الغازية:</b> ابتعدي عنها ساعة كاملة قبل أو بعد تناول الحديد حتى يستفيد جسمك كاملًا منه.</li>
+        <li><b>فيتامين D3:</b> حبة واحدة أسبوعيًا مع وجبة مشبعة ودسمة قليلًا (كالحليب أو زيت الزيتون).</li>
+      </ul>
+    </section>
+    <footer>✨ صُمّم هذا الجدول ليكون رفيقك اليومي نحو الصحة والعافية ✨</footer>
+  </main>
+</body>
+</html>
+
+
+
+
+
+
